@@ -1,0 +1,83 @@
+@import "../base/colors";
+@import "../base/mixins";
+
+.testimonial {
+  padding: 5rem 0;
+  @include laptop {
+    padding: 2rem 0 0;
+    margin-bottom: 8px;
+  }
+  &__grid {
+    perspective: 40px;
+
+    @include tablet {
+      grid-template-rows: repeat(4, auto);
+    }
+    @include laptop {
+      grid-template-rows: repeat(2, auto);
+    }
+    &__item {
+      &:nth-child(1) {
+        background-image: url(../../images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: 85% 2%;
+        @include tablet {
+          grid-column: 1 / span 2;
+          grid-row: 1;
+        }
+        @include laptop {
+          grid-column: 1 / span 2;
+          grid-row: 1;
+        }
+      }
+      &:nth-child(4) {
+        @include tablet {
+          grid-column: 1 / span 2;
+        }
+        @include laptop {
+          grid-column: 2 / span 2;
+        }
+      }
+      &:nth-child(5) {
+        @include tablet {
+          grid-column: 2 / span 1;
+          grid-row: 2 / span 2;
+        }
+        @include laptop {
+          grid-column: 4 / span 1;
+          grid-row: 1 / span 2;
+        }
+      }
+      .card__header {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        grid-template-rows: repeat(2, 28px);
+        align-items: center;
+        column-gap: 8px;
+        line-height: 1;
+      }
+      &--image {
+        grid-row: 1 / span 2;
+        border-radius: 50%;
+      }
+      &--name,
+      &--status {
+        font-size: 1rem;
+      }
+      &--name {
+        font-weight: 900;
+      }
+      &--status {
+        font-weight: 400;
+      }
+      &--primary__text {
+        font-weight: 900;
+        font-size: 1.5rem;
+        margin-bottom: 1.125rem;
+      }
+      &--secondary__text {
+        font-size: 1rem;
+      }
+    }
+  }
+}

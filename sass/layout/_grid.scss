@@ -1,0 +1,21 @@
+@import "../base/mixins";
+.grid {
+  display: grid;
+  gap: 2rem 0;
+}
+.grid-4-columns {
+  grid-template-columns: 1fr;
+}
+.grid {
+  @include tablet {
+    gap: 2rem;
+  }
+  &-4-columns {
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include laptop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
